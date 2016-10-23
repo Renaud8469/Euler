@@ -1,14 +1,19 @@
+from math import sqrt
+
+
 def sum_of_primes_below(a):
     prime_list = list()
     i = 2
     prime_sum = 0
     while i <= a:
-        isprime = True
+        is_prime = True
         for j in prime_list:
-            if i % j == 0:
-                isprime = False
+            if j > sqrt(i):
                 break
-        if isprime:
+            if i % j == 0:
+                is_prime = False
+                break
+        if is_prime:
             prime_list.append(i)
             prime_sum += i
         i += 1
