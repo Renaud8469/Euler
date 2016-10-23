@@ -1,10 +1,11 @@
 from math import sqrt
 
 
-def nth_prime(n):
+def sum_of_primes_below(a):
     prime_list = list()
     i = 2
-    while len(prime_list) < n:
+    prime_sum = 0
+    while i <= a:
         is_prime = True
         for j in prime_list:
             if j > sqrt(i):
@@ -14,8 +15,10 @@ def nth_prime(n):
                 break
         if is_prime:
             prime_list.append(i)
+            prime_sum += i
         i += 1
 
-    return prime_list[n-1]
+    return prime_sum
 
-print(nth_prime(10001))
+# Complexity too high, must be worked on again
+print(sum_of_primes_below(2000000))

@@ -1,3 +1,6 @@
+from math import sqrt
+
+
 def highestprimefactor(a):
     num = a
     maxprime = 1
@@ -6,6 +9,8 @@ def highestprimefactor(a):
     while i <= num:
         isprime = True
         for j in primelist:
+            if j > sqrt(i):
+                break
             if i % j == 0:
                 isprime = False
                 break
